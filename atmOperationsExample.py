@@ -27,19 +27,32 @@ def main():
         print("4. Quit")
         choice = input("Choose an option: ")
 
-        if choice == "1":
-            amount = float(input("Enter amount to deposit: "))
-            balance = deposit(balance, amount)
-        elif choice == "2":
-            amount = float(input("Enter amount to withdraw: "))
-            balance = withdraw(balance, amount)
-        elif choice == "3":
-            check_balance(balance)
-        elif choice == "4":
-            print("Thank you for using the ATM. Goodbye!")
-            break
-        else:
-            print("Invalid choice. Please try again.")
+        try:
+            if choice == "1":
+                amount = (input("Enter amount to deposit: "))
+                amount = float(amount)
+                balance = deposit(balance, amount)
+            elif choice == "2":
+                amount =(input("Enter amount to withdraw: "))
+                amount = float(amount)
+                balance = withdraw(balance, amount)
+            elif choice == "3":
+                check_balance(balance)
+            elif choice == "4":
+                print("Thank you for using the ATM. Goodbye!")
+                break
+            else:
+                print("Invalid choice. Please try again.")
+        except Exception as e: 
+            print(amount,type(amount)) 
+            if (amount==" "):
+                print("Blank spaces are not allowed")
+            elif(type(amount)==str):
+                print("String are not allowed")
+            else:
+                print(e)
+
+        # finally:print("Try again")
 
 if __name__ == "__main__":
     main()
