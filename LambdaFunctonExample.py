@@ -1,9 +1,9 @@
-# def double(x):
-#     return x*2
-# print(double(5))
+def double(x):
+    return x*2
+print(double(5))
 
-# double =lambda x:x*2
-# print(double(5))
+double =lambda x:x*2
+print(double(5))
 def apply(fx,value):
     return 6+fx(value)
 
